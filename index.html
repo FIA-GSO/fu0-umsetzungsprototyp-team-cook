@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Umsetzungsprototyp</title>
+  </head>
+  <body>
+    <main class="content-container">
+      <h1>Ausbildungsnachweiserinnerungen konfigurieren</h1>
+
+      <div class="reminder-toggle-container">
+        <span>Erinnerungen erlauben</span>
+        <input type="checkbox" name="reminders-toggle" id="reminders-toggle" />
+      </div>
+
+      <div class="content-container reminder-interval-container">
+        <span>Erinnerungsintervall</span>
+        <div id="reminder-interval-dropdown">
+          <span id="reminder-interval-title">täglich</span>
+          <button id="reminder-interval-toggle"></button>
+          <div class="reminder-interval-dropdown-list">
+            <button class="dropdown-button">täglich</button>
+            <button class="dropdown-button">wochentlich</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-container reminder-interval-container">
+        <p>Tage</p>
+        <div id="reminder-interval-dropdown">
+          <span id="reminder-interval-title">wochentage</span>
+          <button id="reminder-interval-toggle"></button>
+          <div class="reminder-interval-dropdown-list">
+            <button class="dropdown-button">montag</button>
+            <button class="dropdown-button">dienstag</button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
