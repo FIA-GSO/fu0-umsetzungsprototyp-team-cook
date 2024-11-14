@@ -1,0 +1,40 @@
+body {
+  margin: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main {
+  width: 96%;
+}
+
+h2 {
+  font-size: 18px;
+}
+
+.content-container {
+  background-color: rgb(240, 240, 240);
+  margin: 12px 0;
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+}
+
+.reminder-toggle-container {
+}
+
+#reminders-toggle {
+}
+
+@media (min-width: 700px) {
+  main {
+    width: 80%;
+  }
+
+  .content-container{
+    margin: 18px 0;
+    padding: 16px;
+  }
+}
