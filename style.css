@@ -30,13 +30,42 @@ header {
   justify-content: space-between;
 }
 
-.reminder-toggle-container {
-}
-
+/* Hide the default checkbox */
 #reminders-toggle {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 50px;
+  height: 30px;
+  background-color: #dadada;
+  border-radius: 30px;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-@media (min-width: 700px) {
+/* The circle inside the switch */
+#reminders-toggle:before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 22px;
+  height: 22px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+#reminders-toggle:checked {
+  background-color: #149429;
+}
+
+#reminders-toggle:checked:before {
+  transform: translateX(20px);
+}
+
+@media screen and (min-width: 700px) {
   main {
     width: 80%;
   }
