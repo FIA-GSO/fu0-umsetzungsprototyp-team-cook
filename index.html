@@ -28,20 +28,27 @@
         <div id="reminder-interval-dropdown">
           <select name="reminder-interval" id="">
             <option value="daily">täglich</option>
-            <option value="weekly">wochentlich</option>
+            <option value="weekly">wöchentlich</option>
           </select>
         </div>
       </div>
-      <div
-        class="content-container reminder-interval-container sticky-container"
-      >
+      <div class="content-container reminder-interval-container">
         <label for="reminder-interval">Tage</label>
         <div id="reminder-interval-dropdown">
           <select name="reminder-days-interval" id="">
             <option value="monday">montag</option>
             <option value="tuesday">dienstag</option>
+            <option value="wednesday">mittwoch</option>
+            <option value="thursday">donnerstag</option>
+            <option value="friday">freitag</option>
+            <option value="saturday">samstag</option>
+            <option value="sunday">sonntag</option>
           </select>
         </div>
+      </div>
+      <div class="content-container reminder-interval-container">
+        <label for="reminder-interval">Uhrzeit</label>
+        <input type="time" name="reminder-time" id="">
       </div>
     </main>
 
