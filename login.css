@@ -1,0 +1,37 @@
+form {
+  display: flex;
+  flex-direction: column;
+  padding: 32px;
+  border-radius: 12px;
+  width: 360px;
+  justify-content: center;
+}
+
+form,
+input {
+  border: 1px solid rgb(204, 204, 204);
+}
+
+.form-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.submit-btn {
+  border: none;
+  background-color: rgb(60, 145, 231);
+  color: #fff;
+  border-radius: 8px;
+  height: 34px;
+  margin-top: 26px;
+}
