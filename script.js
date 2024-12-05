@@ -5,20 +5,28 @@ const benutzerListe = [
   { email: "alex@test.com", password: "123456" },
   { email: "anna@test.com", password: "eiojfewpr" },
 ];
-
+let failedAttempts = 0;
 document.querySelector("form").addEventListener("submit", function (event) {
   event.preventDefault();
 
   const formData = new FormData(event.target);
   const data = Object.fromEntries(formData.entries());
 
-  const user = benutzerListe.find(
+  const     user = benutzerListe.find(
     (user) => user.email === data.email && user.password === data.password
   );
 
   if (user) {
     console.log(`User ${user.email} logged.`);
   } else {
+    failedAttempts++;
     console.log("login failed");
+  }
+  if (failedAttempts >= 5) {
+    alert("Too many failed attempts. Please click 'Forgot Password' to reset your password.");
+    const resetButton = document.querySelector("#password-reset");
+    if (resetButton) {
+      resetButton.style.display = "block"; 
+      }
   }
 });
