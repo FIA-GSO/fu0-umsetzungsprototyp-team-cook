@@ -1,3 +1,12 @@
+// import { User } from "./models/User";
+
+class User {
+  constructor(email, password) {
+    this.email = email;
+    this.password = password;
+  }
+}
+
 const benutzerListe = [
   { email: "user1@test.com", password: "password" },
   { email: "user2@test.com", password: "pass123" },
@@ -11,6 +20,11 @@ document.querySelector("form").addEventListener("submit", function (event) {
 
   const formData = new FormData(event.target);
   const data = Object.fromEntries(formData.entries());
+
+  const newUser = new User(data.email, data.password);
+  console.log(newUser.getProfile());
+
+  console.log(`New user ${newUser}`);
 
   const user = benutzerListe.find(
     (user) => user.email === data.email && user.password === data.password
