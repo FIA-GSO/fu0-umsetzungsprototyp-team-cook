@@ -17,8 +17,13 @@ document.querySelector("form").addEventListener("submit", function (event) {
   const newUser = new User(data.email, data.password);
   console.log(newUser);
 
-  const     user = benutzerListe.find(
+  const user = benutzerListe.find(
     (user) => user.email === data.email && user.password === data.password
+  );
+
+  const wrongPasswordMsg = document.getElementById("wrong-password-message");
+  const tooManyAttemptsMsg = document.getElementById(
+    "too-many-attempts-message"
   );
 
   if (user) {
@@ -26,12 +31,15 @@ document.querySelector("form").addEventListener("submit", function (event) {
   } else {
     failedAttempts++;
     console.log("login failed");
+    wrongPasswordMsg.style.display = "block";
   }
   if (failedAttempts >= 5) {
-    alert("Too many failed attempts. Please click 'Forgot Password' to reset your password.");
+    tooManyAttemptsMsg.style.display = "block";
+    wrongPasswordMsg.style.display = "none";
+
     const resetButton = document.querySelector("#password-reset");
     if (resetButton) {
-      resetButton.style.display = "block"; 
-      }
+      resetButton.style.display = "block";
+    }
   }
 });
