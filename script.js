@@ -17,11 +17,6 @@ document.querySelector("form").addEventListener("submit", function (event) {
   const newUser = new User(data.email, data.password);
   console.log(newUser);
 
-  const newUser = new User(data.email, data.password);
-  console.log(newUser.getProfile());
-
-  console.log(`New user ${newUser}`);
-
   const     user = benutzerListe.find(
     (user) => user.email === data.email && user.password === data.password
   );
