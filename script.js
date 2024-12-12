@@ -1,11 +1,4 @@
-// import { User } from "./models/User";
-
-class User {
-  constructor(email, password) {
-    this.email = email;
-    this.password = password;
-  }
-}
+import { User } from "./models/User.js";
 
 const benutzerListe = [
   { email: "user1@test.com", password: "password" },
@@ -22,9 +15,7 @@ document.querySelector("form").addEventListener("submit", function (event) {
   const data = Object.fromEntries(formData.entries());
 
   const newUser = new User(data.email, data.password);
-  console.log(newUser.getProfile());
-
-  console.log(`New user ${newUser}`);
+  console.log(newUser);
 
   const newUser = new User(data.email, data.password);
   console.log(newUser.getProfile());
