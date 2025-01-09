@@ -15,7 +15,72 @@
   </head>
   <body>
     <main>
-      
+      <h1>Ausbildungsnachweise</h1>
+
+      <form id="entryForm">
+          <label for="date">Datum</label>
+          <input type="date" id="date" required>
+  
+          <label for="description">Beschreibung</label>
+          <textarea id="description" rows="4" required></textarea>
+  
+          <button type="submit">Eintrag hinzufügen</button>
+      </form>
+  
+      <div id="entries">
+          <!-- Einträge werden hier angezeigt -->
+      </div>
+  
+      <script>
+          // Referenzen auf die Formularelemente
+          const form = document.getElementById('entryForm');
+          const entriesDiv = document.getElementById('entries');
+  
+          // Event-Listener für das Formular
+          form.addEventListener('submit', function(event) {
+              event.preventDefault(); // Verhindert das Neuladen der Seite
+  
+              // Werte aus dem Formular abrufen
+              const date = document.getElementById('date').value;
+              const description = document.getElementById('description').value;
+  
+              // Neuen Eintrag erstellen
+              const entry = document.createElement('div');
+              entry.className = 'entry';
+              entry.innerHTML = `
+                  <h3>${date}</h3>
+                  <p>${description}</p>
+                  <div class="buttons">
+                      <button class="edit-btn">Bearbeiten</button>
+                      <button class="delete-btn">Löschen</button>
+                  </div>
+              `;
+  
+              // Bearbeiten-Button Funktionalität
+              entry.querySelector('.edit-btn').addEventListener('click', function() {
+                  const newDate = prompt('Neues Datum eingeben:', date);
+                  const newDescription = prompt('Neue Beschreibung eingeben:', description);
+  
+                  if (newDate && newDescription) {
+                      entry.querySelector('h3').textContent = newDate;
+                      entry.querySelector('p').textContent = newDescription;
+                  }
+              });
+  
+              // Löschen-Button Funktionalität
+              entry.querySelector('.delete-btn').addEventListener('click', function() {
+                  if (confirm('Möchten Sie diesen Eintrag wirklich löschen?')) {
+                      entry.remove();
+                  }
+              });
+  
+              // Eintrag zur Liste hinzufügen
+              entriesDiv.appendChild(entry);
+  
+              // Formular zurücksetzen
+              form.reset();
+          });
+      </script>  
     </main>
     <script type="module" src="../script.js"></script>
   </body>
