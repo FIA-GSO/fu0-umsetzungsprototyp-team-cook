@@ -35,15 +35,16 @@ input {
   height: 34px;
 }
 
+.wrong-password-message-container {
+  min-height: 28px;
+}
+
 #wrong-password-message {
   display: none;
 }
 
 #too-many-attempts-message {
   display: none;
-}
-
-#too-many-attemps-message {
   color: red;
   display: flex;
   flex-direction: column;
