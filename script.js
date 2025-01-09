@@ -27,7 +27,6 @@ document.querySelector("form").addEventListener("submit", function (event) {
   );
 
   if (user) {
-    
     localStorage.setItem("userEmail", user.email);
     const userEmail = localStorage.getItem("userEmail");
     console.log(`User ${userEmail} logged in.`);
