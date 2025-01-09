@@ -27,7 +27,10 @@ document.querySelector("form").addEventListener("submit", function (event) {
   );
 
   if (user) {
-    console.log(`User ${user.email} logged.`);
+    
+    localStorage.setItem("userEmail", user.email);
+    const userEmail = localStorage.getItem("userEmail");
+    console.log(`User ${userEmail} logged in.`);
   } else {
     failedAttempts++;
     console.log("login failed");
