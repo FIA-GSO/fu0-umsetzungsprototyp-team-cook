@@ -15,19 +15,11 @@
   </head>
   <body>
     <main>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus
-        dolorem adipisci quasi blanditiis ad dignissimos quia non, magni
-        cupiditate doloremque repellendus esse optio animi molestias totam
-        veniam! Odio, laboriosam dolor.
-      </p>
       <div class="form-wrapper">
         <form action="login" method="get">
           <h1>Login</h1>
 
           <hr />
-          <div class="wrong-password-message">
-          </div>
           <div class="input-wrapper">
             <div class="input-field">
               <label for="email">Email</label>
@@ -39,15 +31,16 @@
             </div>
           </div>
 
+          <div class="wrong-password-message-container">
+            <span id="wrong-password-message"> Wrong password. </span>
+            <span id="too-many-attempts-message">
+              Too many attempts, reset password.
+            </span>
+          </div>
           <button type="submit" class="submit-btn">Login</button>
-          <a href="/login.html" class="forgot-password">
-            Forgot Password?
-          </a>
-
+          <a href="/login.html" class="forgot-password"> Forgot Password? </a>
         </form>
       </div>
-
-      <button id="hello">hello</button>
     </main>
     <script type="module" src="../script.js"></script>
   </body>

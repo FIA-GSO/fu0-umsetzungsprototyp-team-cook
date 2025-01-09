@@ -35,3 +35,11 @@ input {
   height: 34px;
   margin-top: 26px;
 }
+
+#wrong-password-message {
+  display: none;
+}
+
+#too-many-attempts-message {
+  display: none;
+}
