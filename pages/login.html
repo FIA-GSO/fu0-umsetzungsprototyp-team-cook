@@ -18,7 +18,6 @@
       <div class="form-wrapper">
         <form action="login" method="get">
           <h1>Login</h1>
-
           <hr />
           <div class="input-wrapper">
             <div class="input-field">
@@ -28,6 +27,14 @@
             <div class="input-field">
               <label for="password">Password</label>
               <input type="password" name="password" id="password" />
+            </div>
+            <div class="wrong-password-message-container">
+              <span id="wrong-passsword-message">
+                Wrong password try again.
+              </span>
+              <span id="too-many-attemps-message"> 
+                Too many attemps, reset Password.
+              </span>
             </div>
           </div>
 

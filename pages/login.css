@@ -33,7 +33,6 @@ input {
   color: #fff;
   border-radius: 8px;
   height: 34px;
-  margin-top: 26px;
 }
 
 #wrong-password-message {
@@ -41,5 +40,13 @@ input {
 }
 
 #too-many-attempts-message {
+  display: none;
+}
+
+#too-many-attemps-message {
+  color: red;
+  display: flex;
+  flex-direction: column;
+  margin: 12px 0;
   display: none;
 }
